@@ -1,36 +1,36 @@
+[![English](https://img.shields.io/badge/lang-English-blue)](README.md) [![日本語](https://img.shields.io/badge/lang-日本語-orange)](README.ja.md)
+
 # my-codex-cli-config
 
-これはCodex CLIのAGENTS.mdファイルを管理するリポジトリ。
+This repository manages my AGENTS.md file for Codex CLI.
 
-## 構成
+## Structure
 
-- agents.xml: AGENTS.mdファイルの実態。`~/.codex/AGENTS.md`のシンボリックリンク。
-- Makefile: シンボリックリンクの作成と削除を簡単に実行するためのコマンドを実装。
+- agents.xml: The actual content backing `AGENTS.md`. Create a symlink from `~/.codex/AGENTS.md` to this file.
+- Makefile: Provides commands to create and remove the symlink.
 
-## 使い方
+## Usage
 
-`~/.condex/AGENTS.md`のシンボリックリンクをangets.xmlに貼る。
+Create a symlink from `~/.codex/AGENTS.md` to `agents.xml`:
 
 ```sh
 cd my-codex-cli-config
 make codex-link
 ```
 
-シンボリックリンクを解除したい場合は下記のコマンドを実行する。
+To remove the symlink:
 
 ```sh
 make codex-unlink
 ```
 
-## AGENTS.mdの中身をxmlとして定義する理由
+## Why define AGENTS.md in XML
 
-[GPT-5 for Coding Cheatsheet(PDF)](https://cdn.openai.com/API/docs/gpt-5-for-coding-cheatsheet.pdf)によると、XMLライクなタグでセクションを区切る書き方が推奨されているから。
+According to the GPT-5 for Coding Cheatsheet (PDF), using XML-like tags to structure instructions is recommended. The cheatsheet clearly states “XML-like syntax to help structure instructions” and provides concrete examples.
 
-上記OpenAIのチートシートで“XML-like syntax to help structure instructions”とはっきり書かれており、実例が掲載されている。
+The `agents.xml` in this repository was authored with that cheatsheet as a reference.
 
-このリポジトリにあるagents.xmlの内容は、このチートシートを参考に作成した。
+## References
 
-## 参考URL
-
-- [GPT-5 for Coding Cheatsheet(PDF)](https://cdn.openai.com/API/docs/gpt-5-for-coding-cheatsheet.pdf)
-- [GTP-5 prompting guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
+- [GPT-5 for Coding Cheatsheet (PDF)](https://cdn.openai.com/API/docs/gpt-5-for-coding-cheatsheet.pdf)
+- [GPT-5 prompting guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
